@@ -17,7 +17,7 @@ a {
 }
 a:hover {
   border-bottom: 5px solid #0669fc;
-  color:  #0669fc;
+  color: #0669fc;
 }
 
 .active {
@@ -59,7 +59,7 @@ a:hover {
   position: absolute;
   width: max-content;
   height: 29px;
-  left: 1080px;
+  left: 1100px;
   top: 36px;
 
   font-family: "Inter";
@@ -104,4 +104,56 @@ a:hover {
   border-radius: 20px;
   color: white;
   font-size: 18px;
+}
+
+@media screen and (max-width: 1400px) {
+  .searchbar {
+    display: none;
+  }
+  nav {
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background: #01204c;
+    border-bottom: 1px solid #fffcfc;
+  }
+
+  .createNftsBtn {
+    position: absolute;
+    width: max-content;
+    height: 29px;
+    left: 800px;
+    top: 36px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* identical to box height */
+
+    color: #ffffff;
+    background: transparent;
+    border: 0ch;
+  }
+  .collectionBtn {
+  position: absolute;
+  width: max-content;
+  height: 29px;
+  left: 550px;
+  top: 36px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 24px;
+  line-height: 29px;
+  background: transparent;
+  border: 0ch;
+
+  /* identical to box height */
+
+  color: #f1fafc;
+}
 }

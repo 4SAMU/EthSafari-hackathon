@@ -111,7 +111,70 @@
 .descr {
   position: relative;
   width: 1110px;
-  height: 500px;  
+  height: 500px;
   left: 690px;
   top: 80px;
+}
+
+@media screen and (max-width: 1400px) {
+  .nftarea {
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    left: 64px;
+    top: 50px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+  }
+  .buyBtn {
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    left: 694px;
+    top: 450px;
+    background: #062efd;
+    border-radius: 20px;
+    border: 0ch;
+    color: #ffffff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+  }
+  .Royalties {
+    position: relative;
+    width: max-content;
+    height: 29px;
+    left: 0px;
+    top: 50px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+
+    /* identical to box height */
+
+    color: #ffffff;
+  }
+  .nftprice {
+    position: relative;
+    width: max-content;
+    height: 29px;
+    left: 0px;
+    top: 60px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+
+    /* identical to box height */
+
+    color: #ffffff;
+  }
 }

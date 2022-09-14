@@ -5,11 +5,11 @@ import axios from "axios";
 // import Navbar from '../navbar/Navbar'
 import './buy.css'
 import Navbar from '../navbar/Navbar';
+import { toast } from 'react-toastify';
 
 const Buy = () => {
     const [data, updateData] = useState({});
     const [dataFetched, updateDataFetched] = useState(false);
-    const [message, updateMessage] = useState("");
     const [currAddress, updateCurrAddress] = useState("0x");
 
 
@@ -64,14 +64,14 @@ async function buyNFT(tokenId) {
         //Pull the deployed contract instance
         let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer);
         const salePrice = ethers.utils.parseUnits(data.price, 'ether')
-        updateMessage("Buying this NFT... Please Wait")
+        toast.info("Buying this NFT... Please Wait")
         //run the executeSale function
         let transaction = await contract.executeSale(tokenId, {value:salePrice});
         await transaction.wait();
 
         alert('You successfully bought the NFT!');
         window.location.reload();
-        updateMessage("");
+       
     }
     catch(e) {
         alert("oops "+e)

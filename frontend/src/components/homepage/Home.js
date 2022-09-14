@@ -29,6 +29,16 @@ const Home = () => {
       price: "0.03ETH",
       currentlySelling: "True",
       address: "0xe81Bf5A757CB4f7F82a2F23b1e59bE45c33c5b13",
+    },
+    {
+      name: "samudrop",
+      description: "NFT artwork",
+      website: "http://axieinfinity.io",
+      image:
+        "https://nftstorage.link/ipfs/bafybeibjo5wcxf7o5m5san7c6lvhrwszwbbffnlnrdjnmwuvocmc7j4nfa/samudrop.png",
+      price: "0.03",
+      currentlySelling: "True",
+      address: "0xe81Bf5A757CB4f7F82a2F23b1e59bE45c33c5b13",
     }
   ];
   

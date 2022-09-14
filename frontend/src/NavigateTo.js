@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Buy from './components/buynfts/Buy'
-import Createnft from './components/createnfts/Createnft'
+import Createnft from './components/createnfts/createnft'
 import Home from './components/homepage/Home'
 import Navbar from './components/navbar/Navbar'
 
