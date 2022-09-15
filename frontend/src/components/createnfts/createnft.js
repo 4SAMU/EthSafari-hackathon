@@ -17,8 +17,8 @@ const CreateNft = () => {
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [btnBusy, setBtnBusy] = useState(false);
-  
-  const { IPFSuploading, IPFSerror, IPFSupload, metadata } = useIPFS();
+    
+  const { IPFSuploading, IPFSerror, IPFSupload, metadataURL } = useIPFS(); 
 
   const inputFileRef = useRef(null);
 
@@ -44,11 +44,11 @@ const CreateNft = () => {
       return toast.warning("price should be included");
     }
 
-    try {       
+    try { 
+      setBtnBusy(true);
       if (formParams.price < 0.01) {
         toast.error("minimum price is 0.01")
       } else {
-        setBtnBusy(true);
         await IPFSupload({
         name,
         description,
@@ -67,7 +67,7 @@ const CreateNft = () => {
       
       let listingPrice = await contract.getListPrice();
       listingPrice = listingPrice.toString();
-      let transaction = await contract.createToken(metadata, ethers.utils.parseEther(formParams.price.toString()), {
+      let transaction = await contract.createToken(metadataURL, ethers.utils.parseEther(formParams.price.toString()), {
         value: listingPrice,
       });
         toast.info("Please wait.. minting may take upto 5 mins for complete transaction");
@@ -80,7 +80,7 @@ const CreateNft = () => {
     }   
     catch (error) {      
       if (error) {
-        toast.error("failed "+error);
+        toast.error("failed "+error.message);
       }
     } 
   } 
@@ -128,7 +128,7 @@ const CreateNft = () => {
             placeholder="min 0.01 ETH"
             className="inputprice"
             pattern="^\d*(\.\d{0,4})?$"
-            step=".000000000001"
+            step=".01"
             id={formParams.price}
             value={formParams.price}
             onChange={(e) => updateFormParams({ ...formParams, price: e.target.value })}>

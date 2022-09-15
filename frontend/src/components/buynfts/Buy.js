@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import MarketplaceJSON from "../../Marketplace.json";
 import { useParams } from 'react-router-dom';
-import axios from "axios";
-// import Navbar from '../navbar/Navbar'
 import './buy.css'
 import Navbar from '../navbar/Navbar';
 import { toast } from 'react-toastify';
@@ -34,18 +32,21 @@ async function getNFTData(tokenId) {
     //create an NFT Token
     const tokenURI = await contract.tokenURI(tokenId);
     const listedToken = await contract.getListedTokenForId(tokenId);
-    let meta = await axios.get(tokenURI);
-    meta = meta.data;
+    const imageUri = tokenURI.slice(7);
+    const data = await fetch(`https://nftstorage.link/ipfs/${imageUri}`)
+    const json = await data.json()
+    const str = json.image;
+    const mylink = str.slice(7);
     console.log(listedToken);
 
     let item = {
-        price: meta.price,
+        price: json.price,
         tokenId: tokenId,
         seller: listedToken.seller,
         owner: listedToken.owner,
-        image: meta.image,
-        name: meta.name,
-        description: meta.description,
+        image: "https://nftstorage.link/ipfs/"+mylink,
+        name: json.name,
+        description: json.description,
     }
     console.log(item);
     updateData(item);

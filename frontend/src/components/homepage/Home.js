@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import NFTTile from '../../NFTTile';
 import MarketplaceJSON from '../../Marketplace.json'
-import axios from "axios";
-
 
 const Home = () => {
 
@@ -64,8 +62,11 @@ const Home = () => {
     const items = await Promise.all(
       transaction.map(async (i) => {
         const tokenURI = await contract.tokenURI(i.tokenId);
-        let meta = await axios.get(tokenURI);
-        meta = meta.data;
+        const  imageUri= tokenURI.slice(7);
+        const data = await fetch(`https://nftstorage.link/ipfs/${imageUri}`)
+        const json = await data.json()
+        const str = json.image;
+        const mylink = str.slice(7);
 
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
@@ -73,9 +74,9 @@ const Home = () => {
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
           owner: i.owner,
-          image: meta.image,
-          name: meta.name,
-          description: meta.description,
+          image: "https://nftstorage.link/ipfs/"+mylink,
+          name: json.name,
+          description: json.description,
         };
         return item;
       })

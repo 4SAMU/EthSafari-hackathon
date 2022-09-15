@@ -2,19 +2,19 @@ import React, { createContext, useContext, useState } from "react";
 import { NFTStorage, File } from "nft.storage";
 import { toast } from "react-toastify";
 
-
 const IPFSContext = createContext({});
 
 export function IPFSContextProvider(props) {
   const [IPFSuploading, setIPFSuploading] = useState(false);
   const [IPFSerror, setIPFSerror] = useState(null); 
-  const [metadata, setMetadata]=useState('')
+  const [metadataURL, setMetadata]=useState(null)
 
   async function IPFSupload(data, file) {     
    
     try {
       setIPFSerror(null);
       setIPFSuploading(true);
+      setMetadata(null);
       const client = new NFTStorage({token: process.env.REACT_APP_NEW_TOKEN_KEY});   
       
       const metadata = await client.store({
@@ -26,9 +26,11 @@ export function IPFSContextProvider(props) {
       console.log('IPFS URL for the metadata:', metadata.url)
       console.log('metadata.json contents:\n', metadata.data)
       console.log('metadata.json with IPFS gateway URLs:\n', metadata.embed())
-      setMetadata(metadata.data)
-      
-    } catch (error) {
+      const obj = metadata.url;               
+      setMetadata(obj); 
+      console.log("=================print here================", metadataURL)
+    }
+    catch (error) {
       toast.error(error);
       setIPFSerror(error);
     } finally {
@@ -37,7 +39,7 @@ export function IPFSContextProvider(props) {
   }
 
   return (
-    <IPFSContext.Provider value={{ IPFSuploading, IPFSerror, metadata, IPFSupload }}>
+    <IPFSContext.Provider value={{ IPFSuploading, IPFSerror, metadataURL, IPFSupload }}>
       {props.children}
     </IPFSContext.Provider>
   );
