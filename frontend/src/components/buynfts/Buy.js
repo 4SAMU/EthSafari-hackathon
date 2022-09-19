@@ -98,7 +98,7 @@ async function buyNFT(tokenId) {
               </div>
             {/*<button className='buyBtn' onClick={buyNFT}>Buy</button>*/}
                { currAddress === data.owner || currAddress === data.seller ?
-                <div className="buyBtn">You are the owner of this NFT</div>:<button onClick={() => buyNFT(tokenId)}className="buyBtn">Buy this NFT</button>
+                <div className="owner">You are the owner of this NFT</div>:<button onClick={() => buyNFT(tokenId)}className="buyBtn">Buy this NFT</button>
             }
           </div>
       </section>
