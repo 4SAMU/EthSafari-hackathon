@@ -10,5 +10,8 @@ resolve: {
     'https': require.resolve('https-browserify/'),
     'os': require.resolve('os-browserify/'),
   },
+    module.exports = {
+    devtool: "source-map",
+},
 }
 
