@@ -74,7 +74,11 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
+<<<<<<< HEAD
     "test": "node scripts/test.js --env=jsdom"
+=======
+    "test": "node scripts/test.js --env=jsdom" 
+>>>>>>> update
   },
   "browserslist": {
     "production": [
@@ -87,6 +91,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "**/ethers": "^5.7.0"
   },
   "jest": {
     "roots": [

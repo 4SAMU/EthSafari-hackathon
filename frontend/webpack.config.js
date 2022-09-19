@@ -8,10 +8,11 @@ resolve: {
     'http': require.resolve('stream-http/'),
     'url': require.resolve('url/'),
     'https': require.resolve('https-browserify/'),
-    'os': require.resolve('os-browserify/'),
+    'os': require.resolve('os-browserify/'),    
   },
-    module.exports = {
+}
+
+module.exports = {
     devtool: "source-map",
-},
 }
 
