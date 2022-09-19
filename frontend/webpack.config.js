@@ -12,7 +12,4 @@ resolve: {
   },
 }
 
-module.exports = {
-    devtool: "source-map",
-}
 

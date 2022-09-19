@@ -73,12 +73,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
-<<<<<<< HEAD
-    "test": "node scripts/test.js --env=jsdom"
-=======
-    "test": "node scripts/test.js --env=jsdom" 
->>>>>>> update
+    "build": "GENERATE_SOURCEMAP=false node scripts/build.js"
   },
   "browserslist": {
     "production": [
