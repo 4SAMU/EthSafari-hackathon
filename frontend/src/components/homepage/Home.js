@@ -67,6 +67,8 @@ const Home = () => {
         const json = await data.json()
         const str = json.image;
         const mylink = str.slice(7);
+        const imageX = ("https://nftstorage.link/ipfs/" + (mylink).replace("#", "%23"));       
+        
 
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
@@ -74,7 +76,7 @@ const Home = () => {
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
           owner: i.owner,
-          image: "https://nftstorage.link/ipfs/"+mylink,
+          image: imageX,
           name: json.name,
           description: json.description,
         };

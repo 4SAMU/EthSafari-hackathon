@@ -37,6 +37,7 @@ async function getNFTData(tokenId) {
     const json = await data.json()
     const str = json.image;
     const mylink = str.slice(7);
+    const imageX = ((`https://nftstorage.link/ipfs/${mylink}`).replace("#", "%23"));
     console.log(listedToken);
 
     let item = {
@@ -44,7 +45,7 @@ async function getNFTData(tokenId) {
         tokenId: tokenId,
         seller: listedToken.seller,
         owner: listedToken.owner,
-        image: "https://nftstorage.link/ipfs/"+mylink,
+        image: imageX,
         name: json.name,
         description: json.description,
     }

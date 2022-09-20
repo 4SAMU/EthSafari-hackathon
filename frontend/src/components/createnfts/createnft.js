@@ -137,8 +137,9 @@ const CreateNft = () => {
               className="textarea"
               id={formParams.description}
               value={formParams.description}
-              onChange={(e) => updateFormParams({ ...formParams, description: e.target.value })}></textarea>
-          
+            onChange={(e) => updateFormParams({ ...formParams, description: e.target.value })}>
+          </textarea>
+
           <div className="price">price (In ETH)</div>
           <input
             type="number"
@@ -164,7 +165,7 @@ const CreateNft = () => {
         theme="colored"
         style={{ overflowWrap: "anywhere" }}
         position="bottom-right"
-      />
+      />      
     </section>
     
     

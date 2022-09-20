@@ -69,7 +69,21 @@
   font-size: 17px;
   outline: 0ch;
   background: #ffffff;
-  border: 1px solid #000000;
+  border: 0ch;
+  border-right: 2px solid #0669fc;
+  resize: none;
+}
+
+.emoji {
+  box-sizing: border-box;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 527px;
+  top: 181px;
+  outline: 0ch;
+  background: #ffffff; 
+  border: 0ch;
   resize: none;
 }
 
@@ -129,5 +143,3 @@
   color: #ffffff;
   border: 0ch;
 }
-
-
