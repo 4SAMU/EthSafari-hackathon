@@ -163,7 +163,7 @@
 
   .owner {
     position: absolute;
-    width: 250px;
+    width: max-content;
     height: 45px;
     left: 694px;
     top: 450px;
