@@ -7,6 +7,14 @@ import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Spinner } from '../Spinner/Spinner';
+import Web3Modal from "web3modal";
+import { providerOptions } from "../navbar/providerOptions";
+
+const web3Modal = new Web3Modal({
+  cacheProvider: true,
+  providerOptions, // required
+});
+
 
 const Buy = () => {
     const [data, updateData] = useState({});
@@ -17,19 +25,11 @@ const Buy = () => {
 
 
 async function getNFTData(tokenId) {
-    const { ethereum } = window.ethereum;
-      if (ethereum) {
-        alert("please install metamask");
-      }
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      const address = accounts[0];
-      console.log("my address", address)
+   
     const ethers = require("ethers");
-    //After adding your Hardhat network to your metamask, this code will get providers and signers
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
+    const provider = await web3Modal.connect();
+    const library = new ethers.providers.Web3Provider(provider);
+    const signer = library.getSigner();
     const addr = await signer.getAddress();
     //Pull the deployed contract instance
     let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer)
@@ -65,8 +65,9 @@ async function buyNFT(tokenId) {
         setBtnBusy(true)
         const ethers = require("ethers");
         //After adding your Hardhat network to your metamask, this code will get providers and signers
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
+        const provider = await web3Modal.connect();
+        const library = new ethers.providers.Web3Provider(provider);
+        const signer = library.getSigner();
 
         //Pull the deployed contract instance
         let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer);
