@@ -27,9 +27,10 @@ const Buy = () => {
 async function getNFTData(tokenId) {
    
     const ethers = require("ethers");
-    const provider = await web3Modal.connect();
-    const library = new ethers.providers.Web3Provider(provider);
-    const signer = library.getSigner();
+    const web3Modal = new Web3Modal()
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
     const addr = await signer.getAddress();
     //Pull the deployed contract instance
     let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer)
