@@ -5,6 +5,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { providerOptions } from "./providerOptions";
 import "./nav.css";
+import { NavLink } from "react-router-dom";
 
 const web3Modal = new Web3Modal({
   cacheProvider: true,
@@ -60,22 +61,14 @@ const Navbar = () => {
       ></input>
 
       <button className="collectionBtn">
-        <a
-          href="/Home#Home"
-          onClick={() => setActiveNav("#Home")}
-          className={activeNav === "#Home" ? "active" : ""}
-        >
+        <NavLink activeclassname="active" to="/Home">
           Collections
-        </a>
+        </NavLink>
       </button>
       <button className="createNftsBtn">
-        <a
-          href="/createnft"
-          onClick={() => setActiveNav("#createnft")}
-          className={activeNav === "#createnft" ? "active" : ""}
-        >
-          Create Your NFTs
-        </a>
+        <NavLink activeclassname="active" to="/createnft">
+          Create your Nfts
+        </NavLink>
       </button>
 
       {account ? (
