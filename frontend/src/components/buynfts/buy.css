@@ -294,4 +294,21 @@
 
     color: #ffffff;
   }
+  .owner {
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 320px;
+    background: #062efd;
+    border-radius: 20px;
+    border: 0ch;
+    color: #ffffff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+  }
 }
