@@ -6,7 +6,7 @@
   width: 100vw;
   background: #01204c;
   overflow: auto;
-  top: 40px;
+  top: 110px;
 }
 
 .createnftpage_content {
@@ -15,7 +15,7 @@
   height: 843px;
   left: 50%;
   transform: translate(-50%);
-  top: 80px;
+  top: 10px;
 }
 
 .name {
@@ -28,6 +28,8 @@
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
+  top: 10px;
+  top: 10px;
   line-height: 29px;
   color: #ffffff;
 }
@@ -215,7 +217,8 @@
     height: 800px;
     left: 50%;
     transform: translate(-50%);
-    top: 80px;
+    top: 0px;
+    overflow-x: hidden;
   }
   .inputname {
     box-sizing: border-box;

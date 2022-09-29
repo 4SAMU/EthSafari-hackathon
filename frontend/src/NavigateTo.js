@@ -8,14 +8,14 @@ import Navbar from './components/navbar/Navbar'
 const NavigateTo = () => {
   return (
     <div>
-       <Routes>
-        <Route path="nftpage:tokenId" element={<Buy />} />       
+      <Routes>
+        <Route path="nftpage:tokenId" element={<Buy />} />
+        <Route path="createnft" element={<Createnft />} />
       </Routes>
-          <Home />          
-          <Createnft />
-          <Navbar/>
-      </div>
-  )
+      <Home />
+      <Navbar />
+    </div>
+  );
 }
 
 export default NavigateTo
