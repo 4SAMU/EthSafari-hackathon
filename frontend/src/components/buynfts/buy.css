@@ -213,3 +213,85 @@
     color: #ffffff;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .nftarea {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 170px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+  }
+  .buyBtn {
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 320px;
+    background: #062efd;
+    border-radius: 20px;
+    border: 0ch;
+    color: #ffffff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+  }
+  .descr {
+    position: relative;
+    width: 110px;
+    height: 300px;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    top: 550px;
+  }
+
+  .buypage {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #01204c;
+    top: 100px;
+    border-top: 1px solid #ffffff;
+  }
+
+  .nftDescription {
+    position: relative;
+    width: 250px;
+    height: 100px;
+    left: 0px;
+    top: 20px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #ffffff;
+    overflow: auto;
+  }
+
+  .Royalties {
+    position: relative;
+    width: 200px;
+    height: 29px;
+    left: 0px;
+    top: 20px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    /* identical to box height */
+
+    color: #ffffff;
+  }
+}

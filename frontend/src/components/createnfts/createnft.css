@@ -207,3 +207,124 @@
     border: 0ch;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .createnftpage_content {
+    position: relative;
+    width: 300px;
+    height: 800px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 80px;
+  }
+  .inputname {
+    box-sizing: border-box;
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    left: 15px;
+    top: 45px;
+    font-size: 17px;
+    outline: 0ch;
+    background: #ffffff;
+    border: none;
+  }
+  .textarea {
+    box-sizing: border-box;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    left: 15px;
+    top: 145px;
+    font-size: 17px;
+    outline: 0ch;
+    background: #ffffff;
+    border: 0ch;
+    resize: none;
+  }
+  .inputprice {
+    box-sizing: border-box;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 15px;
+    top: 360px;
+    font-size: 17px;
+    outline: 0ch;
+    border: none;
+    background: #ffffff;
+  }
+  .uploadbtn {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 15px;
+    top: 550px;
+    background: #0669fc;
+    border-radius: 20px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 33px;
+    color: #ffffff;
+    border: 0ch;
+  }
+
+  /* ============================== */
+  .name {
+    position: relative;
+    width: max-content;
+    height: 29px;
+    left: 15px;
+    top: 8px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    color: #ffffff;
+  }
+
+  .price {
+    position: absolute;
+    width: max-content;
+    height: 29px;
+    left: 15px;
+    top: 320px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    color: #ffffff;
+  }
+
+  .description {
+    position: relative;
+    width: max-content;
+    height: 29px;
+    left: 15px;
+    top: 80px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    color: #ffffff;
+  }
+
+  .selectfile {
+    position: absolute;
+    width: 719px;
+    height: 60px;
+    left: 15px;
+    top: 440px;
+    font-size: 20px;
+    line-height: 40px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    color: antiquewhite;
+  }
+}
