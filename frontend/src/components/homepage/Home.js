@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import NFTTile from '../../NFTTile';
-import MarketplaceJSON from '../../Marketplace.json'
-import Web3Modal from "web3modal";
-import {providerOptions} from "../navbar/providerOptions";
+/** @format */
 
+import React, { useState } from "react";
+import NFTTile from "../../NFTTile";
+import MarketplaceJSON from "../../Marketplace.json";
+import Web3Modal from "web3modal";
+import { providerOptions } from "../navbar/providerOptions";
 
 const web3Modal = new Web3Modal({
   cacheProvider: true,
@@ -11,11 +12,7 @@ const web3Modal = new Web3Modal({
 });
 
 const Home = () => {
-
-  
-
   const sampleData = [
-   
     {
       name: "NFT",
       description: "NFT artwork",
@@ -45,9 +42,9 @@ const Home = () => {
       price: "0.03",
       currentlySelling: "True",
       address: "0xe81Bf5A757CB4f7F82a2F23b1e59bE45c33c5b13",
-    }
+    },
   ];
-  
+
   const [data, updateData] = useState(sampleData);
   const [dataFetched, updateFetched] = useState(false);
 
@@ -70,16 +67,17 @@ const Home = () => {
     const items = await Promise.all(
       transaction.map(async (i) => {
         const tokenURI = await contract.tokenURI(i.tokenId);
-        const  imageUri= tokenURI.slice(7);
-        const data = await fetch(`https://nftstorage.link/ipfs/${imageUri}`)
-        const json = await data.json()
+        const imageUri = tokenURI.slice(7);
+        const data = await fetch(`https://nftstorage.link/ipfs/${imageUri}`);
+        const json = await data.json();
         const str = json.image;
         const mylink = str.slice(7);
-        const imageX = ("https://nftstorage.link/ipfs/" + (mylink).replace("#", "%23"));       
-        
+        const imageX =
+          "https://nftstorage.link/ipfs/" + mylink.replace("#", "%23");
 
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
+          cacheProvider: true,
           price,
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
@@ -98,16 +96,16 @@ const Home = () => {
   if (!dataFetched) getAllNFTs();
 
   return (
-      <section id='Home'>        
-        <div className='homepage'>
-        <div className='content'>            
-            {data.map((value, index) => {
-              return <NFTTile data={value} key={index}></NFTTile>;
-            })}          
-        </div>         
+    <section id="Home">
+      <div className="homepage">
+        <div className="content">
+          {data.map((value, index) => {
+            return <NFTTile data={value} key={index}></NFTTile>;
+          })}
+        </div>
       </div>
-      </section>
-  )
-}
+    </section>
+  );
+};
 
-export default Home
+export default Home;

@@ -17,8 +17,6 @@ const toHex = (num) => {
 };
 
 const Navbar = () => {
-  const [activeNav, setActiveNav] = useState("");
-
   const [account, setAccount] = useState();
   const [network, setNetwork] = useState();
 
@@ -31,7 +29,7 @@ const Navbar = () => {
       setAccount(
         String(accounts[0]).substring(0, 5) +
           "..." +
-          String(accounts[0]).substring(38)
+          String(accounts[0]).substring(40)
       );
       setNetwork(network);
 
@@ -53,7 +51,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="coinbaselogo">Ngeni NFT MarketPlace</div>
+      <div className="coinbaselogo">The MarketPlace</div>
       <input
         type="text"
         placeholder="search Nfts from collection"
